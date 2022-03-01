@@ -7,6 +7,8 @@
 
     <nuxt-content :document="article" />
 
+    <author :author="article.author" />
+
   </div>
 </template>
 <script>
