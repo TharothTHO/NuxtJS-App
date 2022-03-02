@@ -1,7 +1,7 @@
 <template>
   <div>
-    <img :src="author.image" />
-    <div>
+    <img class="mx-auto" :src="author.image" />
+    <div class="text-center font-medium text-fuchsia-500">
       <h4>Author</h4>
       <p>{{ author.name }}</p>
       <p>{{ author.bio }}</p>

@@ -1,13 +1,16 @@
 <template>
-  <div>
-    <h1>{{ article.title }}</h1>
-    <p>{{ article.description }}</p>
-    <img :src="article.img" :alt="article.alt" />
-    <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
-
+  <div class="block justify-center">
+    <h1 class="text-center font-bold bg-green-600 p-7 border-violet-600 p-3">{{ article.title }}</h1>
+    <img class="mx-auto" :src="article.img" :alt="article.alt" />
+    <p class="text-center font-medium">{{ article.description }}</p>
+    <p class="text-center font-medium">Article last updated: {{ formatDate(article.updatedAt) }}</p>
     <nuxt-content :document="article" />
 
     <author :author="article.author" />
+
+    <prev-next :prev="prev" :next="next" />
+    
+   
 
   </div>
 </template>
@@ -15,7 +18,17 @@
   export default {
     async asyncData ({ $content, params }) {
       const article = await $content('articles', params.slug).fetch()
-      return { article }
+      const [prev, next] = await $content('articles')
+        .only(['title', 'slug'])
+        .sortBy('createdAt', 'asc')
+        .surround(params.slug)
+        .fetch()
+
+      return {
+        article,
+        prev,
+        next
+      }
     },
     methods: {
     formatDate(date) {

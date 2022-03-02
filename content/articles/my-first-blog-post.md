@@ -1,12 +1,11 @@
 ---
 title: My first Blog Post
 description: Learning how to use @nuxt/content to create a blog
-img: first-blog-post.jpg
+img: https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-256.png
 alt: my first blog post
 
 author:
   name: Benjamin
   bio: All about Benjamin
-  image: https://cdn1.iconfinder.com/data/icons/information-technology-16/1700/9303_-_Programmer-512.png
+  image: https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-256.png
 ---
-<author :author="author"></author>
