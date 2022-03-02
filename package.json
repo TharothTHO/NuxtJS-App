@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.15.1",
+    "@nuxt/kit": "^0.8.1-edge",
+    "@nuxtjs/tailwindcss": "^5.0.0-4",
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.19.3",
@@ -21,7 +23,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.7",
     "tailwindcss": "^3.0.23"
   }
 }
