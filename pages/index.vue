@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <h1 class="text-center font-bold bg-green-600 p-7 border-violet-600 p-3">My Blog Posts</h1>
-    <ul>
+  <div class="font-display">
+    <div class="flex justify-between bg-green-700 p-7 border-violet-600 p-3 ">
+    <h1 class="text-slate-50 font-bold text-3xl ">My Blog Posts</h1>
+    <AppSearchInput />
+    </div>
+    <ul class=" grid grid-cols-3 gap-6 p-10">
       <li v-for="article of articles" :key="article.slug">
         <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-          <img class="mx-auto":src="article.img" />
-          <div  class="text-center font-medium">
-            <h2>{{ article.title }}</h2>
-            <p>by {{ article.author.name }}</p>
-            <p>{{ article.description }}</p>
+          <div class="p-10 bg-green-200 h-100 pb-5">
+            <img class="mx-auto pb-4" :src="article.img" />
+            <h2 class="text-3xl font-bold">{{ article.title }}</h2>
+            <p class="text-2xl">by {{ article.author.name }}</p>
           </div>
         </NuxtLink>
       </li>
@@ -33,5 +35,9 @@
 
 
 <style scoped>
+
+.font-display {
+  font-family: 'Hubballi', cursive;
+}
 
 </style>

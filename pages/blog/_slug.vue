@@ -1,14 +1,41 @@
 <template>
-  <div class="block justify-center">
-    <h1 class="text-center font-bold bg-green-600 p-7 border-violet-600 p-3">{{ article.title }}</h1>
-    <img class="mx-auto" :src="article.img" :alt="article.alt" />
-    <p class="text-center font-medium">{{ article.description }}</p>
-    <p class="text-center font-medium">Article last updated: {{ formatDate(article.updatedAt) }}</p>
-    <nuxt-content :document="article" />
+  <div class="bg-gray-100 font-display">
+    <div class="flex justify-between bg-green-700 p-7 border-violet-600 p-3 ">
+      <h1 class="text-slate-50 font-bold text-3xl ">My Blog Posts</h1>
+      <AppSearchInput />
+    </div>
+    <div class="p-8 grid grid-cols-3 gap-6">
+      <div class="col-span-2">
+        <h1 class="text-5xl font-bold text-center pt-6 pb-10 divide-x text-blue-700">{{ article.title }}</h1>
+        <author :author="article.author" />
+        <p class="pt-4">Article last updated: {{ formatDate(article.updatedAt) }}</p>
+        <img class="mx-auto pt-6" :src="article.img" :alt="article.alt" />
+        <p>{{ article.description }}</p>
+        <nuxt-content :document="article" />
+      </div>
+      <div>
+        <div class="pb-4">
+        <h1>Recomment Blogs Post : </h1>
+        </div>
+        <ul class="">
+          <li v-for="article of articles" :key="article.slug">
+            <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+              <div class="">
+                <img class="" :src="article.img" />
+                <h2 class="d">{{ article.title }}</h2>
+                <p class="pb-6">by {{ article.author.name }}</p>
+              </div>
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pb-10">
 
-    <author :author="article.author" />
+      <prev-next :prev="prev" :next="next" />
 
-    <prev-next :prev="prev" :next="next" />
+    </div>
+    </div>
     
    
 
@@ -23,11 +50,16 @@
         .sortBy('createdAt', 'asc')
         .surround(params.slug)
         .fetch()
+      const articles = await $content('articles')
+        .only(['title', 'description', 'img', 'slug', 'author'])
+        .sortBy('createdAt', 'asc')
+        .fetch()
 
       return {
         article,
         prev,
-        next
+        next,
+        articles
       }
     },
     methods: {
@@ -51,5 +83,8 @@
   .nuxt-content p {
     margin-bottom: 20px;
   }
+  .font-display {
+  font-family: 'Hubballi', cursive;
+}
   
 </style>

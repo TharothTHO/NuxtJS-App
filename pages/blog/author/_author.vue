@@ -1,21 +1,26 @@
 <template>
-  <div>
-    <h1>Author: {{ articles[0].author.name }}</h1>
-    <p>Bio: {{ articles[0].author.bio }}</p>
-    <h3>Here are a list of articles by {{ articles[0].author.name }}:</h3>
-    <ul>
-      <li v-for="article in articles" :key="article.slug">
+<div class="bg-zinc-300">
+    <div class="p-10">
+      <h1>Author: {{ articles[0].author.name }}</h1>
+      <p>Bio: {{ articles[0].author.bio }}</p>
+      <h3>Here are a list of articles that have been written by{{ articles[0].author.name }}.</h3>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-10 p-10 bg-zinc-300 h-full">
+    <div v-for="article in articles" :key="article.slug" >
         <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-          <img :src="article.img" :alt="article.alt" />
+          <h3 class="p-5">{{ article.title }}</h3>
+          <img :src="article.img" width="250px" :alt="article.alt" />
           <div>
-            <h2>{{ article.title }}</h2>
+            
             <p>{{ article.description }}</p>
             <p>{{ formatDate(article.updatedAt) }}</p>
           </div>
         </NuxtLink>
-      </li>
-    </ul>
+      </div>    
+    </div>
   </div>
+
 </template>
 
 <script>

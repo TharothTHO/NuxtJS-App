@@ -31,13 +31,19 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
   ],
+  googleFonts: {
+    families: {
+      Hubballi: [300,500,700],
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
-    '@nuxt/content',
+    '@nuxt/content', 
   ],
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
