@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 font-display">
+  <div>
     <div class="p-8 grid grid-cols-3 gap-6">
       <div class="col-span-2">
         <h1 class="text-5xl font-bold text-center pt-6 pb-10 divide-x text-blue-700">{{ article.title }}</h1>

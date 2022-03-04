@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 font-display">
+  <div>
     <ul class=" grid grid-cols-3 gap-6 p-10">
       <li v-for="article of articles" :key="article.slug">
         <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
