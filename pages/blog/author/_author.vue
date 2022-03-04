@@ -10,7 +10,7 @@
     <div v-for="article in articles" :key="article.slug" >
         <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
           <h3 class="p-5">{{ article.title }}</h3>
-          <img :src="article.img" width="250px" :alt="article.alt" />
+          <nuxt-img :src="article.img" width="250px" :alt="article.alt" />
           <div>
             
             <p>{{ article.description }}</p>

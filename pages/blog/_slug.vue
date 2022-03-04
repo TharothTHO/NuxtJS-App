@@ -1,15 +1,11 @@
 <template>
   <div class="bg-gray-100 font-display">
-    <div class="flex justify-between bg-green-700 p-7 border-violet-600 p-3 ">
-      <h1 class="text-slate-50 font-bold text-3xl ">My Blog Posts</h1>
-      <AppSearchInput />
-    </div>
     <div class="p-8 grid grid-cols-3 gap-6">
       <div class="col-span-2">
         <h1 class="text-5xl font-bold text-center pt-6 pb-10 divide-x text-blue-700">{{ article.title }}</h1>
         <author :author="article.author" />
         <p class="pt-4">Article last updated: {{ formatDate(article.updatedAt) }}</p>
-        <img class="mx-auto pt-6" :src="article.img" :alt="article.alt" />
+        <nuxt-img class="mx-auto pt-6" :src="article.img" :alt="article.alt" />
         <p>{{ article.description }}</p>
         <nuxt-content :document="article" />
       </div>
@@ -21,7 +17,7 @@
           <li v-for="article of articles" :key="article.slug">
             <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
               <div class="">
-                <img class="" :src="article.img" />
+                <nuxt-img class="" :src="article.img" />
                 <h2 class="d">{{ article.title }}</h2>
                 <p class="pb-6">by {{ article.author.name }}</p>
               </div>

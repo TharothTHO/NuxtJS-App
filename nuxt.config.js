@@ -32,6 +32,7 @@ export default {
   buildModules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
+    '@nuxt/image'
   ],
   googleFonts: {
     families: {

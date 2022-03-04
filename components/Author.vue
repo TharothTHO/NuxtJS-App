@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="`/blog/author/${author.name}`">
-  <img :src="author.image" />
+  <nuxt-img :src="author.image" />
   <div>
     <h4>Author</h4>
     <p>{{ author.name }}</p>
