@@ -15,17 +15,19 @@
 </template>
 
 <script>
+  import {mapGetters} from "vuex";
   export default {
-    async asyncData({ $content, params }) {
-      const articles = await $content('articles')
-        .only(['title', 'description', 'img', 'slug', 'author'])
-        .sortBy('createdAt', 'asc')
-        .fetch()
-
-      return {
-        articles
-      }
-    }
+    computed:{
+      ...mapGetters({
+        articles: "article/articles",
+      })
+    },
+    mounted(){
+      console.log(this.articles)
+    }, 
+    async asyncData({ $content, params, store }) {
+      store.dispatch('article/getArticle')
+    },
   }
 </script>
 
