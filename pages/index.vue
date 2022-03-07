@@ -26,7 +26,7 @@
       console.log(this.articles)
     }, 
     async asyncData({ $content, params, store }) {
-      store.dispatch('article/getArticles')
+      store.dispatch('article/getArticle')
     },
   }
 </script>
