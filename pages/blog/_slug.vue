@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="p-8 grid grid-cols-3 gap-6">
+   <div class="p-8 grid grid-cols-3 gap-6">
       <div class="col-span-2">
         <h1 class="text-5xl font-bold text-center pt-6 pb-10 divide-x text-blue-700">{{ article.title }}</h1>
         <author :author="article.author" />
@@ -31,14 +31,10 @@
       <prev-next :prev="prev" :next="next" />
 
     </div>
-    </div>
-    
-   
-
   </div>
 </template>
 <script>
-  export default {
+export default {
     async asyncData ({ $content, params }) {
       const article = await $content('articles', params.slug).fetch()
       const [prev, next] = await $content('articles')
@@ -50,7 +46,6 @@
         .only(['title', 'description', 'img', 'slug', 'author'])
         .sortBy('createdAt', 'asc')
         .fetch()
-
       return {
         article,
         prev,
@@ -65,6 +60,23 @@
     }
   }
 }
+/*   import {mapGetters} from "vuex";
+  export default {
+    computed:{
+      ...mapGetters({
+        articles: "article/articles",
+        article: "blog/article",
+      })
+    },
+    mounted(){
+      console.log(this.article)
+      console.log(this.articles)
+    }, 
+    async asyncData({ $content, params, store }) {
+      store.dispatch('article/getArticles')
+      store.dispatch('blog/getBlog')
+    }
+} */
 </script>
 
 <style>
