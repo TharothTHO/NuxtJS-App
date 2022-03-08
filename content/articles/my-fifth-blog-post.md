@@ -2,6 +2,7 @@
 title: Did Facebook put Instagram profits ahead of teen safety?
 description: Social-media use has been linked to worsening mood and body-image problems in some pre-teens and teens. Emerging data now ask whether Facebook was aware of this problem in users of its Instagram app and chose to overlook the app’s impact on adolescent mental health.
 img: /img/1030_addiction_science_vaping_smoke.jpg
+view: 
 alt: Did Facebook put Instagram profits ahead of teen safety?
 author:
   name: Kathiann Kowalski

@@ -2,6 +2,7 @@
 title: Social media What’s not to like?
 description: Connecting with people online can be easy, fun and almost addictive. But linking up with others in the digital world also can have drawbacks. Users need to recognize in advance that not all online posts will be positive (for you).
 img: https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860_main_social_media_one_0.png
+view: 
 alt: Social media What’s not to like?
 
 author:

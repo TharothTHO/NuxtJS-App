@@ -4,6 +4,7 @@ description: PITTSBURGH, Pa. — From exams to the horrors of school shootings, 
 
 
 img: https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860_social_media_anxiety_ISEF_2018.png
+view: 
 alt: Not all social media sites are equally likely to provoke anxiety
 
 author:

@@ -2,6 +2,7 @@
 title: Future cars may offer personal sound zones — no earphones needed.
 description: Today, you wear earphones if you want to listen to music in a car without disturbing others. Someday soon, the car’s headrest may broadcast those tunes so that you can hear them but others in the car won’t have to.
 img: https://www.sciencenewsforstudents.org/wp-content/uploads/2021/11/1030_LEM_personal_sound_zone_main.png
+view: 
 alt: Future cars
 
 author:

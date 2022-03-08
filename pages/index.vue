@@ -7,6 +7,9 @@
             <nuxt-img class="mx-auto pb-4" :src="article.img" />
             <h2 class="text-3xl font-bold">{{ article.title }}</h2>
             <p class="text-2xl">by {{ article.author.name }}</p>
+            <p>
+              Views: {{article.views}}
+            </p>
           </div>
         </NuxtLink>
       </li>
@@ -20,6 +23,7 @@
     computed:{
       ...mapGetters({
         articles: "article/articles",
+        views: 'getViews'
       })
     },
     mounted(){
@@ -28,6 +32,14 @@
     async asyncData({ $content, params, store }) {
       store.dispatch('article/getArticle')
     },
+    /* props: {
+      views: {
+        type: Number,
+        required: false,
+        default: ()=>0
+      },
+    } */
+
   }
 </script>
 

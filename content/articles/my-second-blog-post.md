@@ -2,6 +2,7 @@
 title: Friends’ good moods can be contagious
 description: The flu, measles and other infectious diseases can be contagious. They can spread through social groups as people transmit germs to one another. Some people have wondered if the mental illness known as depression also spreads through social networks. It doesn’t, a new study finds.
 img: https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860-header-contagious-happiness-5735022922_4a30a77024_b.jpg
+view: 
 alt: Friends’ good moods can be contagious
 
 author:
