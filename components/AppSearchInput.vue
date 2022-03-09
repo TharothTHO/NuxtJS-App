@@ -1,6 +1,6 @@
 <template>
   <div >
-    <input class="rounded-3xl p-2"
+    <input class="rounded-3xl p-2 "
       v-model="searchQuery"
       type="search"
       autocomplete="off"
