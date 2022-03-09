@@ -23,6 +23,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    './plugin/antd-ui.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -45,6 +46,14 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxt/content', 
+    /* '@nuxtjs-extra/ant-design-vue',
+    [
+      '@nuxtjs-extra/ant-design-vue',
+      {
+        style: 'css', // available options: 'css', 'less'
+        useDayJs: false, // replace moment.js with day.js internally within 'ant-design-vue' for reducing package size
+      },
+    ], */
   ],
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
