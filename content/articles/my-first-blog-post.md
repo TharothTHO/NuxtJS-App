@@ -2,7 +2,7 @@
 title: Addiction can develop when reward-seeking changes a teen’s brain
 description: Teens often start using potentially addictive agents, such as alcohol and other drugs, at parties and other social events.
 
-img: https://miro.medium.com/focal/1200/900/49/55/1*rLaMpAivyArSLpGeLHX03g.jpeg
+img: /img/1_rLaMpAivyArSLpGeLHX03g.jpeg
 view: { name: 'blog-slug', params: { slug: article.slug } }
 alt: Addiction can develop when reward-seeking changes a teen’s brain
 

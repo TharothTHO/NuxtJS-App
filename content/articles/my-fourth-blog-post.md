@@ -3,7 +3,7 @@ title: Not all social media sites are equally likely to provoke anxiety
 description: PITTSBURGH, Pa. — From exams to the horrors of school shootings, high school students have plenty to be anxious about. By comparison, social media — Instagram, Snapchat and Twitter, for instance — might seem like escapes. But Alisha Goyal, 18, wondered if social media sites might end up being more stressful than soothing. The senior at Hamilton High School in Chandler, Ariz., surveyed teens to discover if social media tends to hurt or help. Her findings now suggest that people who hang out at some social media sites might be at risk of developing anxiety. 
 
 
-img: https://www.sciencenewsforstudents.org/wp-content/uploads/2019/11/860_social_media_anxiety_ISEF_2018.png
+img: /img/860_social_media_anxiety_ISEF_2018.png
 view: 
 alt: Not all social media sites are equally likely to provoke anxiety
 

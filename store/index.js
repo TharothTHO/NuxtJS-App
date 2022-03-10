@@ -1,44 +1,42 @@
-import Vuex from 'vuex';
+const actions = {
+  async onAuthStateChangedAction(state, { authUser, claims }) {
+    if (!authUser) {
+      // remove state
+      state.commit('SET_USER', null)
 
-export const state = () => ({
-    counter: 0
-  })
-  
-  export const mutations = {
-    increment(state) {
-      state.counter++
+      //redirect from here
+      this.$router.push({
+        path: '/auth/signin',
+      })
+    } else {
+      const { uid, email } = authUser
+      state.commit('SET_USER', {
+        uid,
+        email,
+      })
     }
-  }
+  },
+}
 
-new Vuex.Store({
-    state: () => ({
-      counter: 0
-    }),
-    mutations: {
-      increment(state) {
-        state.counter++
-      }
-    },
-    modules: {
-      todos: {
-        namespaced: true,
-        state: () => ({
-          list: []
-        }),
-        mutations: {
-          add(state, { text }) {
-            state.list.push({
-              text,
-              done: false
-            })
-          },
-          remove(state, { todo }) {
-            state.list.splice(state.list.indexOf(todo), 1)
-          },
-          toggle(state, { todo }) {
-            todo.done = !todo.done
-          }
-        }
-      }
-    }
-  })
+const mutations = {
+  SET_USER(state, user) {
+    state.user = user
+  },
+}
+
+const state = () => ({
+  user: null,
+})
+
+const getters = {
+  getUser(state) {
+    return state.user
+  },
+}
+
+export default {
+  state,
+  actions,
+  mutations,
+  getters,
+}

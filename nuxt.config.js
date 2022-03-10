@@ -23,7 +23,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    './plugins/antd-ui.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,8 +32,12 @@ export default {
   buildModules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/vuetify',
   ],
+  router: {
+    middleware: ['auth']
+  },
   googleFonts: {
     families: {
       Hubballi: [300,500,700],
@@ -54,6 +57,29 @@ export default {
         useDayJs: false, // replace moment.js with day.js internally within 'ant-design-vue' for reducing package size
       },
     ], */
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyASArjn_76ZNbLHYEywmqY5e43cOidmxsc",
+          authDomain: "my-blogs-post-e9e54.firebaseapp.com",
+          projectId: "my-blogs-post-e9e54",
+          storageBucket: "my-blogs-post-e9e54.appspot.com",
+          messagingSenderId: "473350580098",
+          appId: "1:473350580098:web:1c01da07c41b9c383ed19b"
+        },
+        services: {
+          auth: {
+            persistence: 'local', // default
+            initialize: {
+              onAuthStateChangedAction: 'onAuthStateChangedAction',
+              subscribeManually: false
+            },
+            ssr: false, // default
+          }
+        }
+      }
+    ]
   ],
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
