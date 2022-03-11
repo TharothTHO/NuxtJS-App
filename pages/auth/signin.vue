@@ -62,8 +62,13 @@ export default {
           that.snackbar = true;
         })
         .then((user) => {
-          //we are signed in
-          $nuxt.$router.push("/dashboard");
+          if ( $nuxt.$fire.auth.currentUser.email == "admin@gmail.com"){
+            return $nuxt.$router.push("/dashboard");
+          } else {
+            console.log(user.uid)
+            return $nuxt.$router.push("/user");
+
+          }
         });
     },
     forgotPassword() {
